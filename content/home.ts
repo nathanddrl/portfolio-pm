@@ -1,8 +1,9 @@
 export const HOME_HERO = {
-  eyebrow: 'Product Manager',
-  title: "Je transforme l'ambiguïté en décisions produit claires",
-  body: "Case studies, teardowns et réflexions — pour documenter ce que j'apprends en construisant des produits.",
-  cta: { label: 'Voir les projets', href: '#projects' },
+  name: 'portfolio',
+  title: 'Product Manager ex-développeur',
+  body: "Je transforme l'ambiguïté en décisions produit claires, puis je documente ce que j'apprends à travers des case studies, des teardowns et des articles.",
+  ctaPrimary: { label: 'Voir mes projets', href: '/projets' },
+  ctaSecondary: { label: 'Me contacter', href: '/contact' },
 } as const
 
 export const HOME_ABOUT = {

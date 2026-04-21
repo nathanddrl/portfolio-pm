@@ -5,14 +5,12 @@ import "./globals.css";
 const syne = Syne({
   variable: "--font-display",
   subsets: ["latin"],
-  axes: ["wght"],
   display: "swap",
 });
 
 const dmSans = DM_Sans({
   variable: "--font-body",
   subsets: ["latin"],
-  axes: ["opsz"],
   display: "swap",
 });
 

@@ -65,7 +65,7 @@ export default function Home() {
 
           <div className="grid gap-[var(--space-2xl)] md:grid-cols-2">
             {featuredProjects.map((project) => (
-              <Card key={project.slug} className="h-full">
+              <Card key={project.slug} className="h-full" tone="cool">
                 <article className="flex h-full flex-col gap-[var(--space-xl)]">
                   <div className="flex items-start justify-between gap-[var(--space-xl)]">
                     <Badge variant={project.type}>{project.type}</Badge>
@@ -95,7 +95,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="blog" className="bg-surface-cool">
+      <section id="blog" className="bg-bg">
         <div className="mx-auto max-w-[1200px] px-[var(--space-3xl)] py-[var(--space-4xl)] max-md:px-[var(--space-xl)]">
           <div className="mb-[var(--space-2xl)] max-w-[640px]">
             <p className="mb-[var(--space-lg)] text-label font-medium uppercase tracking-[var(--tracking-label)] text-accent">
@@ -111,7 +111,7 @@ export default function Home() {
 
           <div className="grid gap-[var(--space-2xl)] md:grid-cols-2 lg:grid-cols-3">
             {featuredPosts.map((post) => (
-              <Card key={post.slug} className="h-full">
+              <Card key={post.slug} className="h-full" tone="cool">
                 <article className="flex h-full flex-col gap-[var(--space-lg)]">
                   <div className="flex items-start justify-between gap-[var(--space-xl)]">
                     <Badge variant={post.tags[0] ?? 'neutral'}>{post.tags[0] ?? 'Blog'}</Badge>
