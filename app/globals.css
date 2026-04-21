@@ -1,26 +1,179 @@
 @import "tailwindcss";
 
+/* ─── Palette & tokens ─────────────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Raw palette */
+  --sable: #FAF7F2;
+  --minuit: #1C1916;
+  --terracotta: #D97B4F;
+  --terracotta-light: #F5EBD8;
+  --terracotta-dark: #8B5E2B;
+  --eau: #A8C4B8;
+  --eau-light: #D7E4DC;
+  --eau-dark: #4E7365;
+  --lin: #E8DFD0;
+  --basalte: #3D3A35;
+
+  /* Semantic colors */
+  --color-bg: #FAF7F2;
+  --color-surface: #E8DFD0;
+  --color-surface-alt: #F2EBDD;
+  --color-surface-cool: #D7E4DC;
+  --color-text-primary: #3D3A35;
+  --color-text-secondary: #6B6560;
+  --color-text-tertiary: #9E9890;
+  --color-accent: #D97B4F;
+  --color-accent-light: #F5EBD8;
+  --color-accent-dark: #8B5E2B;
+  --color-secondary: #A8C4B8;
+  --color-secondary-light: #D7E4DC;
+  --color-secondary-dark: #4E7365;
+  --color-success: #7FA593;
+  --color-warning: #C99347;
+  --color-danger: #B5583E;
+
+  /* Borders */
+  --border-primary: rgba(60, 55, 50, 0.15);
+  --border-secondary: rgba(60, 55, 50, 0.25);
+  --border-hair: rgba(60, 55, 50, 0.08);
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(60, 55, 50, 0.04);
+  --shadow-sm: 0 2px 6px rgba(60, 55, 50, 0.06);
+  --shadow-md: 0 6px 20px rgba(60, 55, 50, 0.08);
+  --shadow-lg: 0 18px 40px rgba(60, 55, 50, 0.12);
+  --shadow-focus: 0 0 0 3px rgba(217, 123, 79, 0.20);
+
+  /* Type scale */
+  --fs-display-1: 3.5rem;
+  --fs-display-2: 2.5rem;
+  --fs-h3: 1.25rem;
+  --fs-body-lg: 1rem;
+  --fs-body: 0.9375rem;
+  --fs-caption: 0.75rem;
+  --fs-label: 0.6875rem;
+
+  /* Line heights */
+  --lh-tight: 1.05;
+  --lh-snug: 1.2;
+  --lh-base: 1.65;
+  --lh-loose: 1.7;
+
+  /* Letter spacing */
+  --tracking-tight: -0.03em;
+  --tracking-snug: -0.02em;
+  --tracking-label: 0.08em;
+
+  /* Spacing — base 4px */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  --space-3xl: 48px;
+  --space-4xl: 64px;
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Animation */
+  --duration-micro: 200ms;
+  --duration-ui: 250ms;
+  --duration-panel: 350ms;
+  --ease-default: ease-out;
+  --ease-panel: cubic-bezier(0.22, 0.9, 0.3, 1);
 }
 
+/* ─── Dark mode ────────────────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --color-bg: #1C1916;
+  --color-surface: #2A2520;
+  --color-surface-alt: #332D27;
+  --color-surface-cool: #263430;
+  --color-text-primary: #F5F0E8;
+  --color-text-secondary: #C4BDB4;
+  --color-text-tertiary: #8A8279;
+  --color-accent: #E89068;
+  --color-accent-light: #3A2C21;
+  --color-accent-dark: #F5B08A;
+  --color-secondary: #B8D2C6;
+  --color-secondary-light: #263430;
+  --color-secondary-dark: #D7E4DC;
+  --border-primary: rgba(245, 240, 232, 0.14);
+  --border-hair: rgba(245, 240, 232, 0.07);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.50);
+  --shadow-lg: 0 22px 50px rgba(0, 0, 0, 0.60);
+  --shadow-focus: 0 0 0 3px rgba(232, 144, 104, 0.30);
+}
+
+/* ─── Tailwind theme mapping ───────────────────────────────────────────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-surface-alt: var(--color-surface-alt);
+  --color-surface-cool: var(--color-surface-cool);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-tertiary: var(--color-text-tertiary);
+  --color-accent: var(--color-accent);
+  --color-accent-light: var(--color-accent-light);
+  --color-accent-dark: var(--color-accent-dark);
+  --color-secondary: var(--color-secondary);
+  --color-secondary-light: var(--color-secondary-light);
+  --color-secondary-dark: var(--color-secondary-dark);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-danger: var(--color-danger);
+
+  --text-display-1: var(--fs-display-1);
+  --text-display-2: var(--fs-display-2);
+  --text-h3: var(--fs-h3);
+  --text-body-lg: var(--fs-body-lg);
+  --text-body: var(--fs-body);
+  --text-caption: var(--fs-caption);
+  --text-label: var(--fs-label);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-full: var(--radius-full);
+
+  --spacing-xs: var(--space-xs);
+  --spacing-sm: var(--space-sm);
+  --spacing-md: var(--space-md);
+  --spacing-lg: var(--space-lg);
+  --spacing-xl: var(--space-xl);
+  --spacing-2xl: var(--space-2xl);
+  --spacing-3xl: var(--space-3xl);
+  --spacing-4xl: var(--space-4xl);
+
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-focus: var(--shadow-focus);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Base ─────────────────────────────────────────────────────────────────── */
+html {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: var(--fs-body);
+  line-height: var(--lh-base);
+  color: var(--color-text-primary);
+  background: var(--color-bg);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100dvh;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
 }
